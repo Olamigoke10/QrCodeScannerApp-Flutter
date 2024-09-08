@@ -22,12 +22,13 @@ class _GenerateQrCodeState extends State<GenerateQrCode> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (urlController.text.isNotEmpty)
+              if (urlController.text.isNotEmpty) ...[
                 QrImage(
                   data: urlController.text,
                   size: 200,
                 ),
                 const SizedBox(height: 10),
+              ],
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: TextField(
